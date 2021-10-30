@@ -1,0 +1,37 @@
+{
+  "name": "Venta",
+  "fields": [
+    {
+      "fieldName": "fechaVenta",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "precioTotal",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "productoVendido",
+      "otherEntityRelationshipName": "idVenta",
+      "relationshipName": "productoVendido"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "carroCompra",
+      "otherEntityRelationshipName": "venta",
+      "relationshipName": "idCarroCompra"
+    }
+  ],
+  "entityTableName": "venta",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["CarroCompras"],
+  "changelogDate": "20211013000929"
+}

@@ -1,0 +1,97 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName CarroCompras
+    blueprints []
+    buildTool maven
+    cacheProvider ehcache
+    clientFramework react
+    clientPackageManager npm
+    clientTheme none
+    creationTimestamp 1634083529744
+    databaseType sql
+    devDatabaseType mysql
+    dtoSuffix DTO
+    enableGradleEnterprise false
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    gradleEnterpriseHost ""
+    jhiPrefix jhi
+    jhipsterVersion "7.2.0"
+    jwtSecretKey "ZmI4Y2IzMDk1YmUwNDQwZWU2ODdmZTljZDkwZDI2Yzg0OTM5YjMzYjJkYWUyZDdjYzAwYzYwZWViYTc5NWY2NjliYmEzZmJlMzE3MDAzYTIzMTlkZTE2YjI3NTBjNjA1MGFkYjg3OTY3MTc4NzRmNGQxNzRiNmMwMDIxYzRlYjU="
+    languages [es, en]
+    messageBroker false
+    nativeLanguage es
+    otherModules []
+    packageName ar.ed.um.programacion2
+    prodDatabaseType mysql
+    reactive false
+    searchEngine false
+    serverPort 8001
+    serviceDiscoveryType no
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    testFrameworks []
+    websocket false
+    withAdminUi true
+  }
+  entities *
+}
+
+//idProductoCarro se crea automaticamente
+//idCarroCompras lo crea la relacion
+entity ProductoCarro{
+    idProducto Integer,
+    nombre String,
+    descripcion String,
+    cantidad Integer,
+    precio Long, //Precio unitario
+}
+
+//idCarroCompra se crea automaticamente
+//idUsuario se crea por la relacion
+entity CarroCompra{
+}
+
+//idUsuario se crea automaticamente
+entity Usuario {
+    nombre String,
+    apellido String,
+    email String,
+    clave String,
+    tipo Boolean,
+}
+
+//idVenta se crea automaticamente
+//idCarroCompra se crea por la relacion
+entity Venta{
+    fechaVenta Instant,
+    precioTotal Long, // precio total de la venta
+}
+
+// El idProductoVendido se crea automaticamente
+// idVenta se crea por la relacion
+entity ProductoVendido{
+    idProducto Integer,
+    nombre String,
+    descripcion String,
+    cantidad Long,
+    precioTotal Long, //= precio_unitario*cantidad
+}
+
+relationship OneToOne {
+  CarroCompra{idUsuario} to Usuario
+}
+
+//
+relationship OneToMany {
+  CarroCompra to ProductoCarro{idCarroCompra}
+  CarroCompra to Venta{idCarroCompra}
+  Venta to ProductoVendido{idVenta}
+}
+
+paginate Usuario, ProductoCarro, ProductoVendido, CarroCompra, Venta  with infinite-scroll
+service Usuario, ProductoCarro, ProductoVendido, CarroCompra, Venta with serviceImpl

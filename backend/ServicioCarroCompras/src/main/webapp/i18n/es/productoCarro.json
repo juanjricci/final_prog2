@@ -1,0 +1,29 @@
+{
+  "carroComprasApp": {
+    "productoCarro": {
+      "home": {
+        "title": "Producto Carros",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Producto Carro",
+        "createOrEditLabel": "Crear o editar Producto Carro",
+        "notFound": "Ningún Producto Carros encontrado"
+      },
+      "created": "Un nuevo Producto Carro ha sido creado con el identificador {{ param }}",
+      "updated": "Un Producto Carro ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Producto Carro ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Producto Carro {{ id }}?"
+      },
+      "detail": {
+        "title": "Producto Carro"
+      },
+      "id": "ID",
+      "idProducto": "Id Producto",
+      "nombre": "Nombre",
+      "descripcion": "Descripcion",
+      "cantidad": "Cantidad",
+      "precio": "Precio",
+      "idCarroCompra": "Id Carro Compra"
+    }
+  }
+}

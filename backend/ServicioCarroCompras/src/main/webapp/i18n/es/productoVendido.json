@@ -1,0 +1,29 @@
+{
+  "carroComprasApp": {
+    "productoVendido": {
+      "home": {
+        "title": "Producto Vendidos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Producto Vendido",
+        "createOrEditLabel": "Crear o editar Producto Vendido",
+        "notFound": "Ningún Producto Vendidos encontrado"
+      },
+      "created": "Un nuevo Producto Vendido ha sido creado con el identificador {{ param }}",
+      "updated": "Un Producto Vendido ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Producto Vendido ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Producto Vendido {{ id }}?"
+      },
+      "detail": {
+        "title": "Producto Vendido"
+      },
+      "id": "ID",
+      "idProducto": "Id Producto",
+      "nombre": "Nombre",
+      "descripcion": "Descripcion",
+      "cantidad": "Cantidad",
+      "precioTotal": "Precio Total",
+      "idVenta": "Id Venta"
+    }
+  }
+}

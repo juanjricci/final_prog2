@@ -1,0 +1,35 @@
+{
+  "name": "CarroCompra",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "carroCompra",
+      "relationshipName": "idUsuario",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "productoCarro",
+      "otherEntityRelationshipName": "idCarroCompra",
+      "relationshipName": "productoCarro"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "venta",
+      "otherEntityRelationshipName": "idCarroCompra",
+      "relationshipName": "venta"
+    }
+  ],
+  "entityTableName": "carro_compra",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["CarroCompras"],
+  "changelogDate": "20211013000729"
+}

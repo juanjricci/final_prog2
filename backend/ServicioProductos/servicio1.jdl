@@ -1,0 +1,70 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName ProductosDistribuidor
+    blueprints []
+    buildTool maven
+    cacheProvider ehcache
+    clientFramework react
+    clientPackageManager npm
+    clientTheme none
+    creationTimestamp 1634083529744
+    databaseType sql
+    devDatabaseType mysql
+    dtoSuffix DTO
+    enableGradleEnterprise false
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    gradleEnterpriseHost ""
+    jhiPrefix jhi
+    jhipsterVersion "7.2.0"
+    jwtSecretKey "ZmI4Y2IzMDk1YmUwNDQwZWU2ODdmZTljZDkwZDI2Yzg0OTM5YjMzYjJkYWUyZDdjYzAwYzYwZWViYTc5NWY2NjliYmEzZmJlMzE3MDAzYTIzMTlkZTE2YjI3NTBjNjA1MGFkYjg3OTY3MTc4NzRmNGQxNzRiNmMwMDIxYzRlYjU="
+    languages [es, en]
+    messageBroker false
+    nativeLanguage es
+    otherModules []
+    packageName ar.ed.um.programacion2
+    prodDatabaseType mysql
+    reactive false
+    searchEngine false
+    serverPort 8000
+    serviceDiscoveryType no
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    testFrameworks []
+    websocket false
+    withAdminUi true
+  }
+  entities *
+}
+
+//idProducto se crea automaticamente
+//idDistribuidor se crea por la relacion
+entity Producto {
+    nombre String,
+    descripcion String,
+    precio Long,
+    cantVendida Long
+}
+
+//idDistribuidor se crea automaticamente
+entity Distribuidor {
+    nombre String,
+    descripcion String
+}
+
+relationship ManyToOne {
+	Producto{distribuidor} to Distribuidor
+}
+
+// Set pagination options
+paginate Producto, Distribuidor with infinite-scroll
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+// angularSuffix * with mySuffix
+

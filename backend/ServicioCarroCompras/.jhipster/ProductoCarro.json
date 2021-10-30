@@ -1,0 +1,43 @@
+{
+  "name": "ProductoCarro",
+  "fields": [
+    {
+      "fieldName": "idProducto",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cantidad",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "precio",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "carroCompra",
+      "otherEntityRelationshipName": "productoCarro",
+      "relationshipName": "idCarroCompra"
+    }
+  ],
+  "entityTableName": "producto_carro",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["CarroCompras"],
+  "changelogDate": "20211013000629"
+}

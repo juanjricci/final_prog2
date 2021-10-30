@@ -1,0 +1,39 @@
+{
+  "name": "Producto",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "precio",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cantVendida",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "distribuidor",
+      "otherEntityRelationshipName": "producto",
+      "relationshipName": "distribuidor"
+    }
+  ],
+  "entityTableName": "producto",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["ProductosDistribuidor"],
+  "changelogDate": "20211013000629"
+}
